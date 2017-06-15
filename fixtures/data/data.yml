@@ -1,0 +1,51 @@
+Feature:
+  feature{1..20}:
+    label: "{{random.words}}"
+    code: "Code{@}"
+  
+Vehicule:
+  vehicule{1..20}:
+    matricule: "{{random.alphaNumeric}}"
+    brand: "{{random.word}}"
+    cardNumber: "{{random.number}}"
+    type: "{{random.word}}"
+    photoUrl: "{{image.imageUrl}}"
+    color: "{{internet.color}}"
+
+Position:
+  position{1..100}:
+    heading: "heading{@}"
+    vehiculeId: @vehicule.*
+    latitude: "{{random.number}}"
+    longitude: "{{random.number}}"
+    speed: "{{random.number}}"
+    date: "{{date.recent}}"
+
+TrackerConfig:
+  trackerConfig{1..10}:
+    intervaleTime: "{{random.number}}"
+    intervalLength: "{{random.number}}"
+
+TrackerModel:
+  trackerModel{1..3}:
+    label: "{{random.words}}"
+    brand: "{{random.word}}"
+    photoUrl: "{{image.imageUrl}}"
+  
+Tracker:
+  tracker{1..20}:
+    password: "{{random.number}}"
+    trackerId: "{{random.number}}"
+    serial: "{{random.number}}"
+    chipNumber: "+22177{{phone.phoneNumber}}"
+    trackerConfigId: @trackerConfig.*
+    trackerModelId: @trackerModel.*
+    vehiculeId: @vehicule{@}
+  
+TrackerHistory:
+  trackerHistory{1..200}:
+    date: "{{date.recent}}"
+    trackerId: @tracker.*
+    vehiculeId: @vehicule.*
+
+  
