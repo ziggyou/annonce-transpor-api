@@ -1,0 +1,23 @@
+{
+  "name": "Commentaire",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "libelle": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "annonce": {
+      "type": "belongsTo",
+      "model": "Annonce",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

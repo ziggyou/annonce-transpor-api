@@ -1,0 +1,56 @@
+{
+  "name": "Annonce",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "libelle": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "date": {
+      "type": "date"
+    },
+    "fermer": {
+      "type": "boolean"
+    },
+    "quantite": {
+      "type": "number"
+    },
+    "nombresignalerfermer": {
+      "type": "number"
+    },
+    "photo": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "type-annonce": {
+      "type": "belongsTo",
+      "model": "Type-annonce",
+      "foreignKey": ""
+    },
+    "utilisateur": {
+      "type": "belongsTo",
+      "model": "Utilisateur",
+      "foreignKey": ""
+    },
+    "favoris": {
+      "type": "hasMany",
+      "model": "Favoris",
+      "foreignKey": ""
+    },
+    "commentaires": {
+      "type": "hasMany",
+      "model": "Commentaire",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

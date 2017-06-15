@@ -1,0 +1,23 @@
+{
+  "name": "Type-annonce",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "libelle": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "annonces": {
+      "type": "hasMany",
+      "model": "Annonce",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

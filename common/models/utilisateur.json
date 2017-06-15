@@ -1,0 +1,64 @@
+{
+  "name": "Utilisateur",
+  "base": "User",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "nom": {
+      "type": "string"
+    },
+    "prenom": {
+      "type": "string"
+    },
+    "telephone1": {
+      "type": "string"
+    },
+    "telephone2": {
+      "type": "string"
+    },
+    "adresse": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "photo": {
+      "type": "string"
+    },
+    "facebook": {
+      "type": "string"
+    },
+    "instagram": {
+      "type": "string"
+    },
+    "snap": {
+      "type": "string"
+    },
+    "linkedin": {
+      "type": "string"
+    },
+    "twiter": {
+      "type": "string"
+    },
+    "niveauqualite": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "annonces": {
+      "type": "hasMany",
+      "model": "Annonce",
+      "foreignKey": ""
+    },
+    "favoris": {
+      "type": "hasMany",
+      "model": "Favoris",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

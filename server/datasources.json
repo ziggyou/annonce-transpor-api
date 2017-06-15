@@ -1,0 +1,14 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "annonceTransport": {
+    "host": "localhost",
+    "port": 27017,
+    "url": false,
+    "database": "annonceTransport",
+    "name": "annonceTransport",
+    "connector": "mongodb"
+  }
+}

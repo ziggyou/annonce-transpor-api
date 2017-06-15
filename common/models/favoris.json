@@ -1,0 +1,28 @@
+{
+  "name": "Favoris",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "active": {
+      "type": "boolean"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "annonce": {
+      "type": "belongsTo",
+      "model": "Annonce",
+      "foreignKey": ""
+    },
+    "utilisateur": {
+      "type": "belongsTo",
+      "model": "Utilisateur",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
