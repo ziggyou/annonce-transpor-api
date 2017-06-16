@@ -1,51 +1,50 @@
-Feature:
-  feature{1..20}:
-    label: "{{random.words}}"
-    code: "Code{@}"
+Annonce:
+  annonce{1..200}:
+     libelle: "{{random.words}}",
+    description: "{{random.words}}",
+    date: "{{date.recent}}",
+    fermer: "{{random.boolean}}",
+    quantite: "{{random.number}}",
+    nombresignalerfermer: "{{random.number}}",
+    photo: "{{image.imageUrl}}",
+    utilisateurId: @utilisateur{@},
+    type-annonceId: @type-annonce
   
-Vehicule:
-  vehicule{1..20}:
-    matricule: "{{random.alphaNumeric}}"
-    brand: "{{random.word}}"
-    cardNumber: "{{random.number}}"
-    type: "{{random.word}}"
-    photoUrl: "{{image.imageUrl}}"
-    color: "{{internet.color}}"
 
-Position:
-  position{1..100}:
-    heading: "heading{@}"
-    vehiculeId: @vehicule.*
-    latitude: "{{random.number}}"
-    longitude: "{{random.number}}"
-    speed: "{{random.number}}"
-    date: "{{date.recent}}"
 
-TrackerConfig:
-  trackerConfig{1..10}:
-    intervaleTime: "{{random.number}}"
-    intervalLength: "{{random.number}}"
+Commentaire:
+  commentaire{1..200}:
+    libelle: "{{random.words}}",
+    annonceId: @annonce{@}
 
-TrackerModel:
-  trackerModel{1..3}:
-    label: "{{random.words}}"
-    brand: "{{random.word}}"
-    photoUrl: "{{image.imageUrl}}"
-  
-Tracker:
-  tracker{1..20}:
-    password: "{{random.number}}"
-    trackerId: "{{random.number}}"
-    serial: "{{random.number}}"
-    chipNumber: "+22177{{phone.phoneNumber}}"
-    trackerConfigId: @trackerConfig.*
-    trackerModelId: @trackerModel.*
-    vehiculeId: @vehicule{@}
-  
-TrackerHistory:
-  trackerHistory{1..200}:
-    date: "{{date.recent}}"
-    trackerId: @tracker.*
-    vehiculeId: @vehicule.*
 
-  
+Favoris:
+  favoris{1..100}:
+    active: "{{random.boolean}}",
+    annonceId:  @annonce{@},
+    utilisateurId: @utilisateur{@}
+   
+
+Type-annonce:
+  type-annonce{1..4}:
+    libelle: "{{random.words}}"
+
+Utilisateur:
+  utilisateur{1..300}:
+   nom: "{{random.words}}",
+   prenom: "{{random.words}}",
+   telephone1: "{{random.words}}",
+   telephone2: "{{random.words}}",
+   adresse: "{{random.words}}",
+   email: "{{random.words}}",
+   photo: "{{image.imageUrl}}",
+   facebook: "{{random.words}}",
+   instagram: "{{random.words}}",
+   snap: "{{random.words}}",
+   linkedin: "{{random.words}}",
+   twiter: "{{random.words}}",
+   niveauqualite: "{{random.number}}",
+   realm: "{{random.words}}",
+   username : "{{random.words}}",
+   emailVerified : "{{random.boolean}}"
+
