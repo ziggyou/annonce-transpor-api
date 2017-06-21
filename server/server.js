@@ -18,6 +18,12 @@ app.start = function() {
   });
 };
 
+app.get("/alldata", function(req, res, next){
+  app.models.Annonce.find({include: ['utilisateur','type-annonce']}, function(err,result){
+    res.send(result);
+  });
+});
+
 // Bootstrap the application, configure models, datasources and middleware.
 // Sub-apps like REST API are mounted via boot scripts.
 boot(app, __dirname, function(err) {
