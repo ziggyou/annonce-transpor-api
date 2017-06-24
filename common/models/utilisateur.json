@@ -57,6 +57,11 @@
       "type": "hasMany",
       "model": "Favoris",
       "foreignKey": ""
+    },
+    "commentaires": {
+      "type": "hasMany",
+      "model": "Commentaire",
+      "foreignKey": ""
     }
   },
   "acls": [],

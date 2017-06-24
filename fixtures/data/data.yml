@@ -3,13 +3,12 @@ Type-annonce:
     libelle: "{{random.words}}"
 
 Utilisateur:
-  utilisateur{1..25}:
+  admin{1..25}:
    nom: "{{random.word}}"
    prenom: "{{random.word}}"
    telephone1: "{{random.word}}"
    telephone2: "{{random.word}}"
    adresse: "{{random.words}}"
-   email: "{{random.word}}@{{random.word}}.{{random.word}}"
    photo: "{{image.imageUrl}}"
    facebook: "{{random.words}}"
    instagram: "{{random.words}}"
@@ -17,6 +16,9 @@ Utilisateur:
    linkedin: "{{random.words}}"
    twiter: "{{random.words}}"
    niveauqualite: "{{random.number}}"
+   username: admin{@}
+   email: "admin{@}@gmail.com"
+   password: admin{@}
 
 
 Annonce:
@@ -28,7 +30,7 @@ Annonce:
     quantite: "{{random.number}}"
     nombresignalerfermer: "{{random.number}}"
     photo: "{{image.imageUrl}}"
-    utilisateurId: @utilisateur.*
+    utilisateurId: @admin.*
     type-annonceId: @typeannonce.*
   
 
@@ -37,11 +39,12 @@ Commentaire:
   commentaire{1..200}:
     libelle: "{{random.words}}"
     annonceId: @annonce.*
+    utilisateurId: @admin.*
 
 
 Favoris:
   favoris{1..100}:
     active: "{{random.boolean}}"
     annonceId:  @annonce.*
-    utilisateurId: @utilisateur.*
+    utilisateurId: @admin.*
    
