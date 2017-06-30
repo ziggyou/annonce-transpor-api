@@ -43,7 +43,7 @@
     "dataSource": "annonceTransport",
     "public": true
   },
-  "Type-annonce": {
+  "Typeannonce": {
     "dataSource": "annonceTransport",
     "public": true
   },

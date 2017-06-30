@@ -32,7 +32,7 @@
   "relations": {
     "type-annonce": {
       "type": "belongsTo",
-      "model": "Type-annonce",
+      "model": "Typeannonce",
       "foreignKey": ""
     },
     "utilisateur": {
